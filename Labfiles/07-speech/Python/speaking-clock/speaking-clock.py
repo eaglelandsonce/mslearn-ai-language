@@ -8,13 +8,17 @@ import azure.cognitiveservices.speech as speech_sdk
 
 
 def main():
+    
+    # Clear the console
+    os.system('cls' if os.name=='nt' else 'clear')
+    
     try:
         global speech_config
 
         # Get config settings
         load_dotenv()
-        speech_key = os.getenv('SPEECH_KEY')
-        speech_region = os.getenv('SPEECH_REGION')
+        speech_key = os.getenv('KEY')
+        speech_region = os.getenv('REGION')
 
         # Configure speech service
         speech_config = speech_sdk.SpeechConfig(speech_key, speech_region)
